@@ -3,8 +3,8 @@ ActionMailer::Base.smtp_settings = {
     :port => 587,
     :authentication => :plain,
     :domain => 'gmail.com',
-    :user_name => ENV["email"], #default from
-    :password => ENV["password"]
+    :user_name => ENV["EMAIL_ID"], #default from
+    :password => ENV["PASSWORD"]
 
 }
 #send email
