@@ -5,7 +5,7 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%#= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:title) %></th>
       <th><%= model_class.human_attribute_name(:description) %></th>
       <th><%= model_class.human_attribute_name(:ingredients) %></th>
@@ -17,15 +17,16 @@
   <tbody>
     <% @recipes.each do |recipe| %>
       <tr>
-        <td><%= link_to recipe.id, recipe_path(recipe) %></td>
-        <td><%= recipe.title %></td>
-        <td><%= recipe.description %></td>
-        <td><%= recipe.ingredients %></td>
+        <td><%#= link_to recipe.id, recipe_path(recipe) %></td>
+        <td><%=linkt_to recipe.title.titleize, recipe_path(recipe) %></td>
+        <td><%= truncate(recipe.description, :length => 8, :separator => ' ') %></td>
+        <td><%= truncate(recipe.ingredients, :length => 8, :separator => ' ') %></td>
         <td><%= recipe.preptime %></td>
-        <td><%=l recipe.created_at %></td>
+        <td><%= time_ago_in_words recipe.created_at %> ago</td>
         <td>
 		<%= link_to t('.show', :default => t("helpers.links.show")),
                       recipe, :class => 'btn btn-mini' %>
+          <%if user_signed_in? && current_user == recipe.user %>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_recipe_path(recipe), :class => 'btn btn-mini' %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
@@ -33,6 +34,7 @@
                       :method => :delete,
                       :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
                       :class => 'btn btn-mini btn-danger' %>
+	<% end %>
         </td>
       </tr>
     <% end %>

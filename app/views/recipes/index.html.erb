@@ -5,7 +5,7 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%#= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:title) %></th>
       <th><%= model_class.human_attribute_name(:description) %></th>
       <th><%= model_class.human_attribute_name(:ingredients) %></th>
@@ -17,12 +17,12 @@
   <tbody>
     <% @recipes.each do |recipe| %>
       <tr>
-        <td><%= link_to recipe.id, recipe_path(recipe) %></td>
-        <td><%= recipe.title %></td>
-        <td><%= recipe.description %></td>
-        <td><%= recipe.ingredients %></td>
+        <td><%#= link_to recipe.id, recipe_path(recipe) %></td>
+        <td><%=link_to recipe.title.titleize, recipe_path(recipe) %></td>
+        <td><%= truncate(recipe.description, :length => 8, :separator => ' ') %></td>
+        <td><%= truncate(recipe.ingredients, :length => 8, :separator => ' ') %></td>
         <td><%= recipe.preptime %></td>
-        <td><%=l recipe.created_at %></td>
+        <td><%= time_ago_in_words recipe.created_at %> ago</td>
         <td>
 		<%= link_to t('.show', :default => t("helpers.links.show")),
                       recipe, :class => 'btn btn-mini' %>
