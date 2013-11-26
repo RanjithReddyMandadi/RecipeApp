@@ -19,8 +19,8 @@
       <tr>
         <td><%#= link_to recipe.id, recipe_path(recipe) %></td>
         <td><%=link_to recipe.title.titleize, recipe_path(recipe) %></td>
-        <td><%= truncate(recipe.description, :length => 8, :separator => ' ') %></td>
-        <td><%= truncate(recipe.ingredients, :length => 8, :separator => ' ') %></td>
+        <td><%= truncate(recipe.description, :length => 15, :separator => ' ') %></td>
+        <td><%= truncate(recipe.ingredients, :length => 12, :separator => ' ') %></td>
         <td><%= recipe.preptime %></td>
         <td><%= time_ago_in_words recipe.created_at %> ago</td>
         <td>

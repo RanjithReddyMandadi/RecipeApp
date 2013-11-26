@@ -27,6 +27,7 @@
             <li><%= link_to "Upload a Recipe", new_recipe_path %></li>
             
 		<% if user_signed_in? %>
+            <li><%= link_to "My Recipes", my_recipes_path %></li>
 	    <li><%= link_to current_user.email, edit_user_registration_path %></li>
 	    <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
 		<% else %>

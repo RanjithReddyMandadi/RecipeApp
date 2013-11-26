@@ -27,6 +27,7 @@
             <li><%= link_to "Upload a Recipe", new_recipe_path %></li>
             
 		<% if user_signed_in? %>
+            <li><%= link_to "My Recipes", my_recipes %></li>
 	    <li><%= link_to current_user.email, edit_user_registration_path %></li>
 	    <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
 		<% else %>
@@ -41,8 +42,8 @@
   </div>
 <div class="container">
 	<div class="row">
-	<div span ="span9"><%= yield %></div>
-	<div class="span3"><p>this is test recipes page </p></div>
+	<div class ="span9"><%= yield %></div>
+	<div class="span3"></div>
 	
 	</div>
 </div>

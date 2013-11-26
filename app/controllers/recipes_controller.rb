@@ -2,7 +2,7 @@ class RecipesController < ApplicationController
   # GET /recipes
   # GET /recipes.json
  before_filter :authenticate_user!, only:[:new, :edit, :create, :update, :destroy]
- before_filter :has_recipe, only:[:edit, :update, :destroy]
+ before_filter :has_recipe, only:[:edit, :update, :destroy,:my_recipes]
   def index
     @recipes = Recipe.all
 
@@ -79,12 +79,21 @@ class RecipesController < ApplicationController
   def destroy
     @recipe = Recipe.find(params[:id])
     @recipe.destroy
-
+    
     respond_to do |format|
       format.html { redirect_to recipes_url }
       format.json { head :no_content }
     end
   end
+
+ def my_recipes
+ @myRecipes = User.find(current_user)
+ @recipes = @myRecipes.recipes
+ respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @recipes }
+    end
+ end
 
  def has_recipe
   if !user_signed_in? || current_user != Recipe.find(params[:id]).user
