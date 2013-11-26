@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   has_many :recipes, :dependent => :destroy
 
   after_create :send_user_mailer
-  after_update :update_user_mailer
+  #after_update :update_user_mailer
   after_destroy :destroy_user_mailer
 
   def send_user_mailer
