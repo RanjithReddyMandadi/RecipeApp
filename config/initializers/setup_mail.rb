@@ -8,7 +8,7 @@ ActionMailer::Base.smtp_settings = {
  
 }
 #send email
-#ActionMailer::Base.default_url_options = {:host=> 'localhost:3000'}
+ActionMailer::Base.default_url_options = {:host=> 'recipes-app-test.herokuapp.com'}
 ActionMailer::Base.delivery_method = :smtp
 ActionMailer::Base.perform_deliveries = true
 #ActionMailer::Base.raise_deliveries_errors = true

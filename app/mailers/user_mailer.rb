@@ -2,7 +2,7 @@ class UserMailer < ActionMailer::Base
   default from: "from@example.com"
      def get_user_mail(user)
        @user = user
-       mail(to: @user.email, subject: "test email")
+       mail(to: @user.email, subject: "Recipe upload")
      end
   def send_mailer(user)
     get_user_mail(user)

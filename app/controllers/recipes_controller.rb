@@ -44,11 +44,13 @@ class RecipesController < ApplicationController
   def create
     @recipe = Recipe.new(params[:recipe])
     @recipe.user = current_user
-
+   
     respond_to do |format|
       if @recipe.save
+	UserMailer.update_mailer(@recipe.user).deliver
         format.html { redirect_to @recipe, notice: 'Recipe was successfully created.' }
         format.json { render json: @recipe, status: :created, location: @recipe }
+	
       else
         format.html { render action: "new" }
         format.json { render json: @recipe.errors, status: :unprocessable_entity }
