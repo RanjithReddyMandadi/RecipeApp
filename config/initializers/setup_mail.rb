@@ -5,7 +5,7 @@ ActionMailer::Base.smtp_settings = {
     :domain => 'gmail.com',
     :user_name => 'ran.mandadi@gmail.com', #default from
     :password => 'chin2ranjith'
- s
+ 
 }
 #send email
 #ActionMailer::Base.default_url_options = {:host=> 'localhost:3000'}
