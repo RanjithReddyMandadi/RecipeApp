@@ -4,7 +4,7 @@ gem 'rails', '3.2.13'
 
 gem 'activerecord', '3.2.13'
 
-gem 'rmagick'
+
 gem 'carrierwave'
 
 gem 'rmagick'
