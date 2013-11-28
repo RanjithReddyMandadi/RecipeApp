@@ -3,14 +3,13 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.13'
 
 gem 'activerecord', '3.2.13'
-
-<<<<<<< HEAD
-=======
-gem 'rmagick'
 gem 'carrierwave'
 
 gem 'rmagick'
->>>>>>> e73e577b0332d6eae79eda0b5205a27ecbb75501
+
+gem 'carrierwave'
+
+gem 'rmagick'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
