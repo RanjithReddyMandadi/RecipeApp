@@ -11,7 +11,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
+<<<<<<< HEAD
+ActiveRecord::Schema.define(:version => 20131128184952) do
+=======
 ActiveRecord::Schema.define(:version => 20131128123759) do
+>>>>>>> e73e577b0332d6eae79eda0b5205a27ecbb75501
 
   create_table "recipes", :force => true do |t|
     t.string   "title"
@@ -37,6 +41,7 @@ ActiveRecord::Schema.define(:version => 20131128123759) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
+    t.string   "avatar"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

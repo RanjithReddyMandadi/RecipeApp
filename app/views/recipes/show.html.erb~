@@ -4,7 +4,10 @@
 </div>
 
 <dl class="dl-horizontal">
+<<<<<<< HEAD
+=======
 <dd><%= image_tag @recipe.image_url.to_s %></dd>
+>>>>>>> e73e577b0332d6eae79eda0b5205a27ecbb75501
   <dt><strong><%= model_class.human_attribute_name(:title) %>:</strong></dt>
   <dd><%= @recipe.title %></dd>
   <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>

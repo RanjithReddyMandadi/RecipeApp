@@ -1,4 +1,8 @@
+<<<<<<< HEAD
+<%= form_for @recipe, :html => { :class => 'form-horizontal' } do |f| %>
+=======
 <%= form_for @recipe, :html => { :class => 'form-horizontal', :multipart=>true } do |f| %>
+>>>>>>> e73e577b0332d6eae79eda0b5205a27ecbb75501
   <div class="control-group">
     <%= f.label :title, :class => 'control-label' %>
     <div class="controls">
@@ -24,6 +28,8 @@
     </div>
   </div>
 
+<<<<<<< HEAD
+=======
  <div class="control-group">
     <%= f.label :image, :class => 'control-label' %>
     <div class="controls">
@@ -31,6 +37,7 @@
     </div>
   </div>
 
+>>>>>>> e73e577b0332d6eae79eda0b5205a27ecbb75501
   <div class="form-actions">
     <%= f.submit nil, :class => 'btn btn-primary' %>
     <%= link_to t('.cancel', :default => t("helpers.links.cancel")),

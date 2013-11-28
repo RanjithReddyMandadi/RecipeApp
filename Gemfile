@@ -3,7 +3,9 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.13'
 
 gem 'activerecord', '3.2.13'
+gem 'carrierwave'
 
+gem 'rmagick'
 
 gem 'carrierwave'
 

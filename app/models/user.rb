@@ -5,14 +5,15 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :avatar
   # attr_accessible :title, :body
   has_many :recipes, :dependent => :destroy
 
   after_create :send_user_mailer
   #after_update :update_user_mailer
   after_destroy :destroy_user_mailer
-
+  
+  mount_uploader :avatar, AvatarUploader
   def send_user_mailer
      
     UserMailer.send_mailer(self).deliver
