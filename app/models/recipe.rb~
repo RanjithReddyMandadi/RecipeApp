@@ -1,8 +1,6 @@
 class Recipe < ActiveRecord::Base
-  attr_accessible :description, :ingredients, :preptime, :title
+  attr_accessible :description, :ingredients, :preptime, :title, :image
   belongs_to :user
-  after_create :update_user_mailer
-  def update_mailer(user)
-    get_user_mail(user)
-  end
+  mount_uploader :image, ImageUploader
+    
 end
