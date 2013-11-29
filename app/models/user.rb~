@@ -12,7 +12,8 @@ class User < ActiveRecord::Base
   after_create :send_user_mailer
   #after_update :update_user_mailer
   after_destroy :destroy_user_mailer
-
+  
+  mount_uploader :avatar, AvatarUploader
   def send_user_mailer
      
     UserMailer.send_mailer(self).deliver

@@ -19,9 +19,11 @@
   <div><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
   <%= f.password_field :current_password %></div>
   
-    <div><%= f.label :avatar %><br />
-  	<%= f.file_field :avatar %></div><i>(change Avatar?)</i><br />
+    <div><%= f.label :avatar %> <i>(change Avatar?)</i><br />
+  	<%= f.file_field :avatar %></div><br /><br />
 
+	<%= f.label :remote_avatar_url, "or image URL"%><br/>
+	<%= f.text_field :remote_avatar_url %><br /><br />
   <div><%= f.submit "Update" %></div>
 <% end %>
 
