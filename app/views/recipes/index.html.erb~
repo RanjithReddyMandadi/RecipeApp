@@ -19,13 +19,13 @@
       <tr>
         <td><%#= link_to recipe.id, recipe_path(recipe) %></td>
         <td><%=link_to recipe.title.titleize, recipe_path(recipe) %></td>
-        <td><%= truncate(recipe.description, :length => 12, :separator => ' ') %></td>
-        <td><%= truncate(recipe.ingredients, :length => 8, :separator => ' ') %></td>
+        <td><%= truncate(recipe.description, :length => 15, :separator => ' ') %></td>
+        <td><%= truncate(recipe.ingredients, :length => 12, :separator => ' ') %></td>
         <td><%= recipe.preptime %></td>
         <td><%= time_ago_in_words recipe.created_at %> ago</td>
         <td>
 		<%= link_to t('.show', :default => t("helpers.links.show")),
-                      recipe, :class => 'btn btn-mini' %>
+                      recipe, :class => 'btn btn-mini btn-primary' %>
           <%if user_signed_in? && current_user == recipe.user %>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_recipe_path(recipe), :class => 'btn btn-mini' %>
@@ -41,6 +41,6 @@
   </tbody>
 </table>
 
-<%= link_to t('.new', :default => t("helpers.links.new")),
+<%= link_to t('.upload recipe', :default => t("helpers.links.new")),
             new_recipe_path,
             :class => 'btn btn-primary' %>

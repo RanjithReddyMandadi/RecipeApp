@@ -21,11 +21,14 @@
   
     <div><%= f.label :avatar %> <i>(change Avatar?)</i><br />
   	<%= f.file_field :avatar %></div><br /><br />
-  <div><%= f.submit "Update" %></div>
+
+	<%= f.label :remote_avatar_url, "or image URL"%><br/>
+	<%= f.text_field :remote_avatar_url %><i>(or avatar URL?)</i><br /><br />
+  <div><%= f.submit "Update", :class=>"btn btn-primary" %></div>
 <% end %>
 
 <h3>Cancel my account</h3>
 
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete %></p>
+<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete, :class=>"btn btn-danger" %></p>
 
 <%= link_to "Back", :back %>
